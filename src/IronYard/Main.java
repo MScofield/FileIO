@@ -1,16 +1,12 @@
 package IronYard;
 
-import jdk.nashorn.internal.objects.annotations.Attribute;
-import jdk.nashorn.internal.parser.JSONParser;
 import jodd.json.JsonParser;
 import jodd.json.JsonSerializer;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.jar.Attributes;
 
 
 public class Main {
@@ -28,7 +24,6 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         Helicopter h = new Helicopter(make,model,year,turbine,passengerCapacity);
-        //Helicopter h = new Helicopter();
         make = "Robinson";
         model = "R22";
         year = 1984;
