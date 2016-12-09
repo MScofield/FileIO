@@ -22,6 +22,12 @@ public class Helicopter {
         this.passengerCapacity = passengerCapacity;
 
     }
+
+    @Override
+    public String toString(){
+        return this.getMake();
+    }
+
     public String getMake() {
         return make;
     }

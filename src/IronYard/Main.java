@@ -25,11 +25,14 @@ public class Main {
             JsonParser p = new JsonParser();
             scan.useDelimiter("\\Z");
             String contents = scan.next();
-            Helicopter h2 = p.parse(contents, Helicopter.class);
+            h = p.parse(contents, Helicopter.class);
+        } catch (Exception e){
+            System.out.println("friendly error message: 'You have become void of empathy and are technically less human than my alarm clock.'");
 
+        }
             System.out.println("This simple app stores the basic attributes for any Helicopter,");
             System.out.println("Your current Helicopter has the following attributes: ");
-            System.out.printf("%d %s %s %d-passenger.\n", h2.year, h2.make, h2.model, h2.passengerCapacity);
+            System.out.printf("%d %s %s %d-passenger.\n", h.year, h.make, h.model, h.passengerCapacity);
             System.out.println("Press enter to update the Helicopter attributes or type exit to exit.");
             exit = userInput.nextLine();
             if (exit.equalsIgnoreCase("exit")) {
@@ -60,10 +63,7 @@ public class Main {
             String json = serial.include("*").serialize(h);
             fw.write(json);
             fw.close();
-        } catch (Exception e){
-            System.out.println("friendly error message: 'You have become void of empathy and are technically less human than my alarm clock.'");
 
-        }
 
     }
 }
